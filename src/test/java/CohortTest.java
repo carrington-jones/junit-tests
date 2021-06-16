@@ -4,6 +4,9 @@ import static org.junit.Assert.*;
 
 public class CohortTest {
 
+    private Cohort neptune;
+    private Student CodyDuck;
+
     Cohort emptyCohort;
     Cohort cohortWOne;
     Cohort cohortWMany;
@@ -31,8 +34,12 @@ public class CohortTest {
 
     @Test
     public void testIfAddStudentWorks(){
+        Cohort neptune = new Cohort();
+        Student CodyDuck = new Student (21, "CodyDuck");
+        neptune.addStudent(CodyDuck);
         assertEquals(1, cohortWOne.getStudents().size());
         assertEquals(2, cohortWMany.getStudents().size());
+        assertEquals(1, neptune.getStudents().size());
     }
 
     @Test
